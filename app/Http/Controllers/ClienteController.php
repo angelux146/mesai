@@ -17,13 +17,21 @@ class ClienteController extends Controller
     return view('clientes.menu', compact('menus'));
   }
 
+<<<<<<< HEAD
   
+=======
+  // Vista reservación
+>>>>>>> 9a8d5cfcfafed7fe9ca1b1a4e4c5a57468444a28
   public function reservacion()
   {
     return view('clientes.reservacion');
   }
 
+<<<<<<< HEAD
   
+=======
+  // Guardar reservación
+>>>>>>> 9a8d5cfcfafed7fe9ca1b1a4e4c5a57468444a28
   public function guardarReservacion(Request $request)
   {
     $request->validate([
@@ -38,7 +46,11 @@ class ClienteController extends Controller
       'mesa' => 'required',
     ]);
 
+<<<<<<< HEAD
     
+=======
+    // Crear cliente
+>>>>>>> 9a8d5cfcfafed7fe9ca1b1a4e4c5a57468444a28
     $cliente = Cliente::create([
       'nombre' => $request->nombre,
       'telefono' => $request->telefono,
@@ -46,7 +58,11 @@ class ClienteController extends Controller
       'notas' => $request->notas,
     ]);
 
+<<<<<<< HEAD
     
+=======
+    // Crear reservación
+>>>>>>> 9a8d5cfcfafed7fe9ca1b1a4e4c5a57468444a28
     Reservacion::create([
       'cliente_id' => $cliente->id,
       'fecha' => $request->fecha,
