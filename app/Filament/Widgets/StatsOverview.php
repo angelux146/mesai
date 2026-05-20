@@ -9,42 +9,42 @@ use Filament\Widgets\Widget;
 
 class StatsOverview extends Widget
 {
-    protected string $view = 'filament.widgets.stats-overview';
+  protected string $view = 'filament.widgets.stats-overview';
 
-    protected int|string|array $columnSpan = 'full';
+  protected int|string|array $columnSpan = 'full';
 
-    public function getData(): array
-    {
-        return [
+  public function getData(): array
+  {
+    return [
 
-            'stats' => [
+      'stats' => [
 
-                [
-                    'title' => '🍔 Platillos',
-                    'value' => Menu::count(),
-                    'description' => 'Platillos registrados',
-                ],
+        [
+          'title' => '🍔 Platillos',
+          'value' => Menu::count(),
+          'description' => 'Platillos registrados',
+        ],
 
-                [
-                    'title' => '👥 Clientes',
-                    'value' => Cliente::count(),
-                    'description' => 'Clientes registrados',
-                ],
+        [
+          'title' => '👥 Clientes',
+          'value' => Cliente::count(),
+          'description' => 'Clientes registrados',
+        ],
 
-                [
-                    'title' => '📅 Reservaciones',
-                    'value' => Reservacion::count(),
-                    'description' => 'Reservaciones totales',
-                ],
+        [
+          'title' => '📅 Reservaciones',
+          'value' => Reservacion::count(),
+          'description' => 'Reservaciones totales',
+        ],
 
-                [
-                    'title' => '🔥 Hoy',
-                    'value' => Reservacion::whereDate('fecha', today())->count(),
-                    'description' => 'Reservaciones de hoy',
-                ],
+        [
+          'title' => '🔥 Hoy',
+          'value' => Reservacion::whereDate('created_at', today())->count(),
+          'description' => 'Reservaciones creadas hoy',
+        ],
 
-            ]
+      ]
 
-        ];
-    }
+    ];
+  }
 }
